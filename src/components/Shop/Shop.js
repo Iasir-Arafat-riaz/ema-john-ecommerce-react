@@ -11,7 +11,7 @@ const Shop = () => {
         <div className="shop-Container">
             <div className="product-container">
             
-                {product.map(pro => <Product products={pro.name}> </Product>)}
+                {product.map(pro => <Product image={pro.img} products={pro.name}> </Product>)}
             
             
 
