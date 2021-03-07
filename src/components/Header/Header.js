@@ -6,7 +6,12 @@ import "./Header.css"
 const Header = () => {
     return (
         <div className="Header">
-            <img src={logo} alt=""/>
+            <img src={logo} alt="" />
+            <nav>
+                <a href="/shop"> shop</a>
+                <a href="/Review"> Order Review</a>
+                <a href="/manage">Manage Inventory</a>
+            </nav>
         </div>
     );
 };
