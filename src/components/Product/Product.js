@@ -19,7 +19,8 @@ const Product = (props) => {
                     props.handleButoon(props.price)}
                     className="main-button">
                     <FontAwesomeIcon icon={faShoppingCart} />Add to Cart</button>
-                    <div>2441</div>
+                    <div></div>
+                    <div></div>
             </div>
 
 
