@@ -5,8 +5,8 @@ const Cart = (props) => {
     console.log(cart)
     return (
         <div>
-            <h4>Order summary</h4>
-            <p>Item Ordered : {cart.length}</p>
+            <h4 className="summary">Order summary</h4>
+            <p className="items">Item Ordered : {cart.length}</p>
         </div>
     );
 };
