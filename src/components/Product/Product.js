@@ -16,11 +16,11 @@ const Product = (props) => {
                 <p> $ {props.price}</p>
                 <p>only {props.stock} left in stock - order soon</p>
                 <button onClick={() =>
-                    props.handleButoon(props.price)}
+                    props.handleButoon(props.prod)}
                     className="main-button">
                     <FontAwesomeIcon icon={faShoppingCart} />Add to Cart</button>
                    
-                    <button>hp</button>
+                    
                     
             </div>
 
