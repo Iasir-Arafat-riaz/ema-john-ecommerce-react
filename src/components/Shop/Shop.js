@@ -9,9 +9,9 @@ const Shop = () => {
     const firstTen = fake.slice(0, 10)
     const [product, setProduct] = useState(firstTen)
     const[cart,setCart]=useState([])
-    const handleProduct=(prod)=>{
-        console.log("bujh beta riaz",prod)
-        const newCart=[...cart,prod];
+    const handleProduct=(productAll)=>{
+        // console.log("bujh beta riaz",price)
+        const newCart=[...cart,productAll];
         setCart(newCart)
 
     }
@@ -21,7 +21,7 @@ const Shop = () => {
         <div className="shop-Container" >
             <div className="product-container">
             
-                {product.map(pro => <Product handleButoon={handleProduct} image={pro.img} products={pro.name} seller={pro.seller} price={pro.price} stock={pro.stock}> </Product>)}
+                {product.map(pro => <Product handleButoon={handleProduct} productAll={pro}> </Product>)}
             
             
 
