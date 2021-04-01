@@ -30,13 +30,13 @@ const Cart = (props) => {
         return Number(fixed)
     }
     return (
-        <div className="details">
+        <div className="details bg-warning">
             <h4 className="summary">Order summary</h4>
             <p className="items">Item Ordered : {cart.length}</p>
-            <p>Items : {fixedAll(total)}</p>
-            <p>Shipping :{fixedAll(shippingCost)}</p>
-            <p><small>tax: {fixedAll(taxes)}</small></p>
-            <p>order total:{fixedAll(inTotal)}</p>
+            <p>Items : ${fixedAll(total)}</p>
+            <p>Shipping :${fixedAll(shippingCost)}</p>
+            <p><small>tax: ${fixedAll(taxes)}</small></p>
+            <p>order total:${fixedAll(inTotal)}</p>
 
         </div>
     );
