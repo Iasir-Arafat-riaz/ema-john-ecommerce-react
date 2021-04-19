@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Product from '../Product/Product';
 import "./Cart.css"
 const Cart = (props) => {
@@ -38,7 +39,9 @@ const Cart = (props) => {
             <p><small>tax: ${fixedAll(taxes)}</small></p>
             <p>order total:${fixedAll(inTotal)}</p>
             <br/>
+            <Link to="review">
             <button className="main-button">Review Order</button>
+            </Link>
 
         </div>
     );
