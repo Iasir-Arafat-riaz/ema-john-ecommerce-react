@@ -30,13 +30,15 @@ const Cart = (props) => {
         return Number(fixed)
     }
     return (
-        <div className="details bg-warning">
+        <div className="details bg-info">
             <h4 className="summary">Order summary</h4>
             <p className="items">Item Ordered : {cart.length}</p>
             <p>Items : ${fixedAll(total)}</p>
             <p>Shipping :${fixedAll(shippingCost)}</p>
             <p><small>tax: ${fixedAll(taxes)}</small></p>
             <p>order total:${fixedAll(inTotal)}</p>
+            <br/>
+            <button className="main-button">Review Order</button>
 
         </div>
     );
