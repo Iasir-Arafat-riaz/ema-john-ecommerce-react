@@ -1,11 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import {  faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import "./Product.css"
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-    console.log(props)
+    // console.log(props)
     const { img, name, seller, price, stock, key } = props.productAll
     return (
         <div className="product">
@@ -18,7 +18,7 @@ const Product = (props) => {
                 <p>By : {seller}</p>
                 <p> $ {price}</p>
                 <p>only {stock} left in stock - order soon</p>
-                {<button onClick={() =>
+                {props.showAddToCart === true && <button onClick={() =>
                     props.handleButoon(props.productAll)}
                     className="main-button">
                     <FontAwesomeIcon icon={faShoppingCart} />Add to Cart
