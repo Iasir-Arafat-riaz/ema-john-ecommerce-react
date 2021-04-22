@@ -8,6 +8,9 @@ const Review = () => {
 
     const removeProduct=(producKey)=>{
         console.log("try harder", producKey)
+        const newCart = cart.filter(crd=> crd.key !== producKey)
+        setCart(newCart);
+
     }
 
     useEffect(() => {
