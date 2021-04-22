@@ -8,7 +8,7 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         let produc = cart[i];
-        total = total + produc.price
+        total = total + produc.price * produc.quantity
 
     }
     let shippingCost = 11.9
