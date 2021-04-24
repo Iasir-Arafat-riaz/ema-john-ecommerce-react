@@ -39,7 +39,7 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cartSummary={cart}></Cart>
-                <a href=""></a>
+
             </div>
         </div>
     );
