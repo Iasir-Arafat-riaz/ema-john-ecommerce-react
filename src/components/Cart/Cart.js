@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "./Cart.css"
 const Cart = (props) => {
     const cart = props.cartSummary
-    // console.log(cart)
+    console.log(cart)
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         let produc = cart[i];

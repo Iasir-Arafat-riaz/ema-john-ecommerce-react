@@ -13,10 +13,34 @@ const Shop = () => {
 
     const handleProduct = (productAll) => {
         // console.log("bujh beta riaz",price)
-        const newCart = [...cart, productAll];
+        
+        // const newCart = [...cart, productAll];
+        // setCart(newCart)
+        // const sameProduct = newCart.filter(pd => pd.key === productAll.key)
+        // const count = sameProduct.length;
+
+        //for added qantity (qantity issue e jonno NaN dekhay, ei problem face na korle uporer motoi kora jabe )
+        const toBeAddedKey = productAll.key;
+        const sameProduct = cart.find(pd => pd.key === toBeAddedKey);
+        let count = 1;
+        let newCart;
+         
+        
+        
+        if(sameProduct){
+            count = sameProduct.quantity + 1;
+            sameProduct.quantity= count;
+            const others = cart.filter(pd=>pd.key !== toBeAddedKey)
+            newCart = [...others, sameProduct]
+        }
+       
+        else{
+            productAll.quantity = 1;
+            newCart = [...cart,productAll]
+        }
         setCart(newCart)
-        const sameProduct = newCart.filter(pd => pd.key === productAll.key)
-        const count = sameProduct.length;
+        
+        
         addToDatabaseCart(productAll.key, count)
 
     }
