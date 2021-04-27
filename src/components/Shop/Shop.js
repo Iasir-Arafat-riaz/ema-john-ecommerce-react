@@ -62,7 +62,7 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cartSummary={cart}></Cart>
             </div>
-            <a href=""></a>
+            
 
         </div>
     );
