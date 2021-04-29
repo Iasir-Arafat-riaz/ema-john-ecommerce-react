@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import fakeData from '../../fakeData';
 import fake from "../../fakeData"
-import { addToDatabaseCart } from '../../utilities/databaseManager';
+import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import "./Shop.css"
@@ -10,10 +11,22 @@ const Shop = () => {
     const firstTen = fake.slice(0, 10)
     const [product, setProduct] = useState(firstTen)
     const [cart, setCart] = useState([])
+    useEffect(() => {
+        const savedCart = getDatabaseCart();
+        const productKeys = Object.keys(savedCart)
+        const previousCart = productKeys.map(proKey => {
+            const product = fakeData.find(pd => pd.key === proKey)
+            product.quantity= savedCart[proKey]
+            return product
+
+            // console.log(savedCart[proKey])
+        })
+        setCart(previousCart)
+    }, []);
 
     const handleProduct = (productAll) => {
         // console.log("bujh beta riaz",price)
-        
+
         // const newCart = [...cart, productAll];
         // setCart(newCart)
         // const sameProduct = newCart.filter(pd => pd.key === productAll.key)
@@ -24,23 +37,23 @@ const Shop = () => {
         const sameProduct = cart.find(pd => pd.key === toBeAddedKey);
         let count = 1;
         let newCart;
-         
-        
-        
-        if(sameProduct){
+
+
+
+        if (sameProduct) {
             count = sameProduct.quantity + 1;
-            sameProduct.quantity= count;
-            const others = cart.filter(pd=>pd.key !== toBeAddedKey)
+            sameProduct.quantity = count;
+            const others = cart.filter(pd => pd.key !== toBeAddedKey)
             newCart = [...others, sameProduct]
         }
-       
-        else{
+
+        else {
             productAll.quantity = 1;
-            newCart = [...cart,productAll]
+            newCart = [...cart, productAll]
         }
         setCart(newCart)
-        
-        
+
+
         addToDatabaseCart(productAll.key, count)
 
     }
@@ -62,7 +75,7 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cartSummary={cart}></Cart>
             </div>
-                    
+
 
         </div>
     );
