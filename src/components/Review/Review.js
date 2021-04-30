@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import fakeData from '../../fakeData';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Review = () => {
     const [cart, setCart] = useState([])
+
+    const handlePlaceOrder =()=>{
+        setCart([])
+        processOrder()
+
+        console.log("do programming")
+    }
 
     const removeProduct = (producKey) => {
         console.log("try harder", producKey)
@@ -40,7 +47,7 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cartSummary={cart}>
-                    <button className="main-button">Place Order</button>
+                    <button  onClick={handlePlaceOrder} className="main-button">Place Order</button>
                 </Cart>
 
                 <br/>
