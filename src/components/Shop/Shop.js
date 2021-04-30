@@ -78,7 +78,11 @@ const Shop = () => {
                     <Link to="review">
                         <button className="main-button">Review Order</button>
                     </Link>
+
                 </Cart>
+                <Link to="contact">
+                    <h2>About us</h2>
+                </Link>
             </div>
 
 
