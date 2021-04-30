@@ -80,9 +80,13 @@ const Shop = () => {
                     </Link>
 
                 </Cart>
+                <br/>
+                <br/>
                 <Link to="contact">
-                    <h2>About us</h2>
+                    <h2> ***About Us</h2>
                 </Link>
+
+               
             </div>
 
 

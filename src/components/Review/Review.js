@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import fakeData from '../../fakeData';
 import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
@@ -41,6 +42,12 @@ const Review = () => {
                 <Cart cartSummary={cart}>
                     <button className="main-button">Place Order</button>
                 </Cart>
+
+                <br/>
+                <br/>
+                <Link to="shop">
+                <button style={{color: 'red'}, {backgroundColor:"skyBlue"}}> Back to Home</button>
+                </Link>
 
             </div>
             
