@@ -8,12 +8,17 @@ import happyImage from "../../images/giphy.gif"
 
 const Review = () => {
     const [cart, setCart] = useState([])
+    //use state for last happyImage
+    const[orderPlaced, setOrderPlaced] = useState(false)
 
     const handlePlaceOrder =()=>{
         setCart([])
+        setOrderPlaced(true)
         processOrder()
-
-        console.log("do programming")
+    }
+    let thankYou;
+    if(orderPlaced){
+        thankYou = <img src={happyImage} alt=""/>
     }
 
     const removeProduct = (producKey) => {
@@ -45,6 +50,9 @@ const Review = () => {
                 {
                     cart.map(pd => <ReviewItem removeProduct={removeProduct} key={pd.key} product={pd}></ReviewItem>)
                 }
+
+                
+                {thankYou}
             </div>
             <div className="cart-container">
                 <Cart cartSummary={cart}>
@@ -58,6 +66,7 @@ const Review = () => {
                 </Link>
 
             </div>
+            
             
         </div>
     );
