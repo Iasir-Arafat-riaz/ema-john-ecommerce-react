@@ -8,9 +8,10 @@ import happyImage from "../../images/giphy.gif"
 
 const Review = () => {
     const [cart, setCart] = useState([])
+
+
     //use state for last happyImage
     const [orderPlaced, setOrderPlaced] = useState(false)
-
     const handlePlaceOrder = () => {
         setCart([])
         setOrderPlaced(true)
