@@ -41,9 +41,11 @@ const Cart = (props) => {
             <p><small>tax: ${fixedAll(taxes)}</small></p>
             <p>order total:${fixedAll(inTotal)}</p>
             <br/>
+            {
+            /* normally use it for biginners >> 
             <Link to="review">
             <button className="main-button">Review Order</button>
-            </Link>
+            </Link> */}
 
         </div>
     );

@@ -16,7 +16,7 @@ const Shop = () => {
         const productKeys = Object.keys(savedCart)
         const previousCart = productKeys.map(proKey => {
             const product = fakeData.find(pd => pd.key === proKey)
-            product.quantity= savedCart[proKey]
+            product.quantity = savedCart[proKey]
             return product
 
             // console.log(savedCart[proKey])
@@ -73,7 +73,11 @@ const Shop = () => {
 
             </div>
             <div className="cart-container">
-                <Cart cartSummary={cart}></Cart>
+                <Cart cartSummary={cart}>
+                    <Link to="review">
+                        <button className="main-button">Review Order</button>
+                    </Link>
+                </Cart>
             </div>
 
 
