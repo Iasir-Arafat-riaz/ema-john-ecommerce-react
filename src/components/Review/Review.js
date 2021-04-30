@@ -4,6 +4,7 @@ import fakeData from '../../fakeData';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import happyImage from "../../images/giphy.gif"
 
 const Review = () => {
     const [cart, setCart] = useState([])
