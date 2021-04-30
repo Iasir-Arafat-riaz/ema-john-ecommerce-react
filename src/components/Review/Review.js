@@ -9,16 +9,17 @@ import happyImage from "../../images/giphy.gif"
 const Review = () => {
     const [cart, setCart] = useState([])
     //use state for last happyImage
-    const[orderPlaced, setOrderPlaced] = useState(false)
+    const [orderPlaced, setOrderPlaced] = useState(false)
 
-    const handlePlaceOrder =()=>{
+    const handlePlaceOrder = () => {
         setCart([])
         setOrderPlaced(true)
         processOrder()
     }
+    //condition apply for last thakYou image
     let thankYou;
-    if(orderPlaced){
-        thankYou = <img src={happyImage} alt=""/>
+    if (orderPlaced) {
+        thankYou = <img src={happyImage} alt="" />
     }
 
     const removeProduct = (producKey) => {
@@ -51,23 +52,23 @@ const Review = () => {
                     cart.map(pd => <ReviewItem removeProduct={removeProduct} key={pd.key} product={pd}></ReviewItem>)
                 }
 
-                
+
                 {thankYou}
             </div>
             <div className="cart-container">
                 <Cart cartSummary={cart}>
-                    <button  onClick={handlePlaceOrder} className="main-button">Place Order</button>
+                    <button onClick={handlePlaceOrder} className="main-button">Place Order</button>
                 </Cart>
 
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <Link to="shop">
-                <button style={{color: 'red'}, {backgroundColor:"skyBlue"}}> Back to Home</button>
+                    <button style={{ color: 'red' }, { backgroundColor: "skyBlue" }}> Back to Home</button>
                 </Link>
 
             </div>
-            
-            
+
+
         </div>
     );
 };
