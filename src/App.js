@@ -48,6 +48,7 @@ function App() {
             <NotFound></NotFound>
 
           </Route>
+          <Route></Route>
         </Switch>
       </Router>
 
