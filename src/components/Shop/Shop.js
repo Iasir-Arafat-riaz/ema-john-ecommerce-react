@@ -6,6 +6,7 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import "./Shop.css"
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import Inventory from '../Inventory/Inventory';
 
 const Shop = () => {
 
@@ -59,7 +60,7 @@ const Shop = () => {
 
     }
     console.log(product)
-
+    //try for nested route
     let match = useRouteMatch
     return (
         <div className="shop-Container" >
@@ -89,8 +90,12 @@ const Shop = () => {
 
 
             </div>
+
+            {/* try for nested route */}
             <Switch>
-                <Route></Route>
+                <Route path={`${match.path}/:topicId`}>
+                    <Inventory></Inventory>
+                </Route>
             </Switch>
 
 
