@@ -91,7 +91,8 @@ const Shop = () => {
 
             </div>
 
-            {/* try for nested route */}
+            
+            try for nested route
             <Switch>
                 <Route path={`${match.path}/:topicId`}>
                     <Inventory></Inventory>
