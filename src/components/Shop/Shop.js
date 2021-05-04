@@ -5,7 +5,7 @@ import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseMana
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import "./Shop.css"
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 const Shop = () => {
 
@@ -88,6 +88,10 @@ const Shop = () => {
 
                
             </div>
+            <Switch>
+                <Route></Route>
+            </Switch>
+            
 
 
         </div>
