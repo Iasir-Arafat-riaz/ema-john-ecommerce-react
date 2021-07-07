@@ -94,7 +94,7 @@ const Shop = () => {
             
             try for nested route
             <Switch>
-                <Route path={`${match.path}/:topicId`}>
+                <Route path={`${match.url}/:topicId`}>
                     <Inventory></Inventory>
                 </Route>
             </Switch>
