@@ -10,8 +10,8 @@ const Contact = () => {
                 Please contact with us
             </h1>
                 <br />
-                <h2>Hot Line 1 : <Link to="/Riaz">01670293752(Mr. Iasir Arafat)</Link> </h2>
-                <h2>Hot Line 2 : <Link to="/Riaz">01622118833(Mr. Riaz)</Link> </h2>
+                <h2>Hot Line 1 : <Link to="/Riaz">01670293752(Mr.Iasir Arafat)</Link> </h2>
+                <h2>Hot Line 2 : <Link to="/Riaz">01622118833(Mr.Riaz)</Link> </h2>
                 <h3>Address : 1683 Manda, New-California </h3>
 
             </div>
@@ -25,3 +25,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+//Thanks
